@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Project API</title>
+ 
+
+
+<body bgcolor=#33475b>
+<header class="stroke" style="background-image: url('static/image3.jpg');background-repeat: no-repeat;
+  background-size: 100% 100%; ">
+<center>
+ <div style="width:35%;class="login">
+	<h1 style="font-family:verdana;color:vilot;background-color:orange"> STROKE PREDICTION</h1>
+</center>
+
+</head>
+     <!-- Main Input For to our ML Model -->
+
+
+    <form action="{{ url_for('predict')}}"method="post">
+		<p style="color:vilot;font-family:verdana";align = "left">
+		
+		<b><mark>Gender</mark>:<select name="Gender" id="Gender">
+  			<option value="0">0</option>
+			<option value="1">1</option></select><br><br>
+	   	
+		<b><mark>Age</mark> : <input type="text" name="age" placeholder="age" required="required" /><br><br>
+
+		<b><mark>Hypertension</mark>:<select name="Hypertension" id="Hypertension">
+  			<option value="0">0</option>
+			<option value="1">1</option></select><br><br>
+		
+		<b><mark>Heart Disease</mark>:<select name="Heart Disease" id="Heart Disease">
+  			<option value="0">0</option>
+			<option value="1">1</option></select><br><br>
+
+		<b><mark>Ever Married</mark>:<select name="Ever Married" id="Ever Married">
+  			<option value="0">0</option>
+			<option value="1">1</option></select><br><br>
+
+		<b><mark>Work Type</mark>:<select name="Work Type" id="Work Type">
+  			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option></select><br><br>
+
+		<b><mark>Residence Type</mark>:<select name="Residence Type" id="Residence Type">
+  			<option value="0">0</option>
+			<option value="1">1</option></select><br><br>
+		
+		<b><mark>Avg Glucose Level</mark> : <input type="text" name="avg_glucose_level" placeholder="avg_glucose_level" required="required" /><br><br>
+
+		<b><mark>BMI</mark> : <input type="text" name="bmi" placeholder="bmi" required="required" /><br><br>
+
+		<b><mark>Smoking Status</mark>:<select name="Smoking Status" id="Smoking Status">
+  			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option></select><br><br><br>
+
+		</p>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">PREDICT</button>
+
+    </form>
+
+   <br>
+   <br>
+
+<center>
+<p style="color:voilet;font-family:verdana;font-size:20px">
+   {{ prediction_text }}
+</p>
+</center>
+
+<div style="width:65%;float:left;color:white">  
+  <h1>Information of the Required Inputs:</h1>
+<p style="color:white">
+1.<b>Gender</b>: Male-(1), Female-(0) <br>
+2.<b>Age</b>: Age of the recorded patrient.<br>
+3. <b>Hypertension</b>: Yes-(1), N0-(0)<br>
+4. <b>Heart DiseaseD</b>: Yes-(1), N0-(0)<br>
+5. <b>Ever Married</b>: Married-(1), Non-Married-(0).<br>
+6. <b>Work Type</b>:Goverment Job-(0), Never Worked-(1), Private-(2), Self-Employed-(3), Children(4).<br>
+7.  <b>Residence Type</b>: Urban-(1), Rural(0).<br>
+8. <b>Avg Glucose Level</b>: Avg-glucose value of patient.<br>
+9.<b>BMI</b>: BMI of patient.<br>
+10. <b>Smoking Status</b>: Unknown-(0), Formerly Smoked-(1), Never Smoked-(2), Smokes-(3).<br>
+</p>        
+
+
+</body>
+</html>
